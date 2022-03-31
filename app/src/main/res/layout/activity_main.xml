@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/coordinatorLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -48,8 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
-            android:text="Rs. 90,000"
-            android:textColor="@color/dark_bg_two"
+            android:text="Rs. 00,000"
+            android:textColor="@color/dark_bg_three"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -84,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:padding="5dp"
-                    android:text="Rs.54,999"
+                    android:text="Rs.00"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/green"
                     android:textSize="22sp"
@@ -135,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:padding="5dp"
-                    android:text="Rs.34,001"
+                    android:text="Rs.00"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/red"
                     android:textSize="22sp"

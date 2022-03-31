@@ -1,11 +1,11 @@
 package com.blogspot.svdevs.expensetracker.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.SurfaceControl
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.blogspot.svdevs.expensetracker.R
+import com.blogspot.svdevs.expensetracker.adapter.TransactionAdapter
 import com.blogspot.svdevs.expensetracker.databinding.ActivityIncomeBinding
 import com.blogspot.svdevs.expensetracker.model.Transaction
 
@@ -23,10 +23,12 @@ class IncomeActivity : AppCompatActivity() {
 
         window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.dark_bg)
 
-       list = MainActivity.incomeTranscations
+        list = MainActivity.incomeTranscations
 
-        binding.textView.text = list[1].title
-
-
+        binding.rvIncome.apply {
+            layoutManager = LinearLayoutManager(this@IncomeActivity)
+            adapter = TransactionAdapter(list)
+            setHasFixedSize(true)
+        }
     }
 }

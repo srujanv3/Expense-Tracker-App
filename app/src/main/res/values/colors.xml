@@ -12,4 +12,5 @@
     <color name="dark_bg">#03041A</color>
     <color name="dark_bg_one">#003559</color>
     <color name="dark_bg_two">#1149B2</color>
+    <color name="dark_bg_three">#87cefa</color>
 </resources>

@@ -3,7 +3,6 @@ package com.blogspot.svdevs.expensetracker.activities
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -32,8 +31,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var deleteTransaction: Transaction
 
     companion object {
-         lateinit var incomeTranscations: ArrayList<Transaction>
-         lateinit var expenseTransactions: ArrayList<Transaction>
+        lateinit var incomeTranscations: ArrayList<Transaction>
+        lateinit var expenseTransactions: ArrayList<Transaction>
 
     }
 
@@ -54,7 +53,8 @@ class MainActivity : AppCompatActivity() {
         // init view model
         transactionViewModel = ViewModelProvider(
             this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(TransactionViewModel::class.java)
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(TransactionViewModel::class.java)
 
         transactionViewModel.allTransactions.observe(this, Observer { transactionsList ->
             transactionsList?.let {
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.incomeCard.setOnClickListener {
-           sendIntentIncome()
+            sendIntentIncome()
         }
 
         binding.expenseCard.setOnClickListener {
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sendIntentExpense() {
         expenseTransactions = transactions.filter { it.amount < 0 } as ArrayList<Transaction>
-        val intent = Intent(this,ExpenseActivity::class.java)
+        val intent = Intent(this, ExpenseActivity::class.java)
         //intent.putExtra("EXP",expenseTransactions)
         startActivity(intent)
     }
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
     private fun sendIntentIncome() {
         incomeTranscations = transactions.filter { it.amount > 0 } as ArrayList<Transaction>
         val intent = Intent(this, IncomeActivity::class.java)
-       // intent.putParcelableArrayListExtra("INC",incomeTranscations as java.util.ArrayList<out Parcelable>)
+        // intent.putParcelableArrayListExtra("INC",incomeTranscations as java.util.ArrayList<out Parcelable>)
         startActivity(intent)
     }
 
